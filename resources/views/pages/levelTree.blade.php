@@ -9,9 +9,9 @@
 <div class="content-wrapper">  
 
       <!-- Default box -->
-      <div class="card">
+      <div class="card" style="background-color: rgba(0,0,0,.9);">
         <div class="card-header with-border">
-        <div class="card-body basic-style" style="background: #000">
+        <div class="card-body basic-style">
           <div class="hv-container">
             <div class="hv-wrapper">
 
@@ -37,10 +37,6 @@
           
         </div>
         <!-- /.box-body -->
-        <div class="card-footer">
-          
-        </div>
-        <!-- /.box-footer-->
       </div>
       <!-- /.box -->
 

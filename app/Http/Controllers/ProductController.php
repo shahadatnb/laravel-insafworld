@@ -106,17 +106,17 @@ class ProductController extends Controller
     {
         $this->validate($request, array(
             'title'=>'required|max:255',
-            'price'=>'numeric|required',
-            'cat_id'=>'numeric|required',
-            'description'=>'required',
+            //'price'=>'nullable|required',
+            //'cat_id'=>'nullable|required',
+            'description'=>'nullable',
             'photo'=>'nullable|image:max:1024',
             ));
 
         $data = Product::find($id);
         $data->title = $request->title;
-        $data->price = $request->price;
-        $data->cat_id = $request->cat_id;
-        $data->reduced_price = $request->reduced_price;
+        //$data->price = $request->price;
+        //$data->cat_id = $request->cat_id;
+        //$data->reduced_price = $request->reduced_price;
         $data->description = $request->description;
         $data->status = 1;
         $image = $request->file('photo');
@@ -135,7 +135,7 @@ class ProductController extends Controller
             if ($success) {
                 $data->photo = $filename;
                 $data->save();
-                Session::flash('success','Product Successfully Save');
+                Session::flash('success','VIP Successfully Save');
 
                 return redirect()->route('products.edit',$data->id);
             } else {

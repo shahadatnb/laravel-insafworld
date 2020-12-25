@@ -9,7 +9,7 @@
       <div class="card">
         <div class="card-header with-border">
           
-          <table class="table table-dark">
+          <table class="table table-striped">
             <tr>
               <th>SL</th>
               <th>Username</th>

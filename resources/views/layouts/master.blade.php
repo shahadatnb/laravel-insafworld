@@ -48,7 +48,7 @@
 	  }
 	  .navbar .navbar-nav li.menu-item-has-children .sub-menu {
 			padding: 0 0 0 10px;
-			border-left: 2px solid #ddd;
+			border: 2px solid #ddd;
 		}
 		.stat-widget-five .stat-content {
 			margin-left: 75px !important;
@@ -100,8 +100,18 @@
 						<a href="{{url('/withdrawWetting')}}"><i class="menu-icon fa fa-money"></i>Withdraw Money </a>
 					</li>
 					<li>
+						<a href="{{url('/packs')}}"><i class="menu-icon fa fa-user"></i>Packege List </a>
+					</li>
+					<li>
 						<a href="{{url('/allMemberList')}}"><i class="menu-icon fa fa-user"></i>Member List </a>
-					</li> 
+					</li>
+					<li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>VIP Info</a>
+						<ul class="sub-menu children dropdown-menu bg-transparent">
+							<li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ url('/products')}}">All List</a></li>
+							<li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ url('/products/create')}}">Add New</a></li>
+						</ul>
+					</li>
 					{{-- <li>
 						<a href="{{url('/youtubeLinks')}}"><i class="menu-icon fa fa-youtube"></i>Youtube </a>
 					</li> --}}                    
@@ -145,7 +155,6 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Network</a>
 						<ul class="sub-menu children dropdown-menu bg-transparent">
 							<li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ url('/levelTree')}}">Downline Network</a></li>
-							<li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ url('/home')}}">Re-Activation</a></li>
 							<li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ url('/mySponsor')}}">My Sponsored Records</a></li>
 							<li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{ url('/vipMembers')}}">VIP Member</a></li>
 						</ul>

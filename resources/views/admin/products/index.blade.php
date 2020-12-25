@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Product')
+@section('title','VIP')
 @section('stylesheet')
   <style>
     form.delete {
@@ -9,19 +9,7 @@
   @endsection
 @section('content')
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>Products</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Product</a></li>
-        <li class="active">All Product</li>
-      </ol>
-    
-
-    <!-- Main content -->
-    
+   
 
       <!-- Default box -->
       <div class="card">
@@ -33,20 +21,18 @@
           <table class="table">
             <tr>
               <th>ID</th>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Category</th>
+              <th>Title</th>
+              <th>Photo</th>
               <th>Action</th>
             </tr>
             @foreach ($products as $product)
             <tr>
               <td>{{ $product->id }}</td>
               <td>{{ $product->title }}</td>
-              <td>{{ $product->price }}</td>
-              <td>@if($product->cat_id != null ){{ $product->cat->title }}@endif</td>
+              <td><img height="50" width="50" src="{{url('public/upload/product')}}/{{ $product->photo }}" alt=""></td>              
               <td>
-                <a class="btn btn-success btn-xs" href="{{ route('products.show',$product->id) }}"><i class="fas fa-eye"></i></a>
-                <a class="btn btn-success btn-xs" href="{{ route('products.edit',$product->id) }}"><i class="fas fa-edit"></i>  Edit</a>
+                <a class="btn btn-success btn-xs" href="{{ route('products.show',$product->id) }}"><i class="fa fa-eye"></i></a>
+                <a class="btn btn-success btn-xs" href="{{ route('products.edit',$product->id) }}"><i class="fa fa-edit"></i>  Edit</a>
                 
                   @if($product->status==0)
                     <a class="btn btn-primary btn-xs" href="{{ route('productHide',$product->id) }}">Show</a>
@@ -57,16 +43,12 @@
                 <form class="delete" action="{{ route('products.destroy',$product->id) }}" method="post">
                   {{ csrf_field() }}
                   {{ method_field('DELETE') }}
-                  <button type="submit" class="btn btn-danger btn-xs" href='{{ $product->id }}' onclick="return confirm('Are You Sure To Delete This Item?')"><i class="fas fa-trash-alt"></i></button>
+                  <button type="submit" class="btn btn-danger btn-xs" href='{{ $product->id }}' onclick="return confirm('Are You Sure To Delete This Item?')"><i class="fa fa-trash"></i></button>
               </form>
               </td>
             </tr>
             @endforeach
           </table>
-        </div>
-        <!-- /.box-body -->
-        <div class="card-footer">
-          Footer
         </div>
         <!-- /.box-footer-->
       </div>

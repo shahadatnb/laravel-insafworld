@@ -7,12 +7,12 @@
 
       <!-- Default box -->
       <div class="card">
-        <div class="card-header bg-success with-border">
+        <div class="card-header bg-info with-border">
           <strong class="card-title text-light">Your {{$walletInfo['title']}} Balance <i class="fa fa-dollar"></i>{{ $balance }}</strong>
         </div>
         <div class="card-body">
           <p>Transaction List</p>
-          <table class="table">
+          <table class="table table-striped">
             <tr>
               <th>Remark</th>
               <th>Receipt</th>

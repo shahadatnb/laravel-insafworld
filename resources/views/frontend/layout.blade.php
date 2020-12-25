@@ -28,7 +28,14 @@
     <link rel="stylesheet" href="{{url('/public/fontend')}}/css/responsive.css">
     <!-- color -->
     <link id="changeable-colors" rel="stylesheet" href="{{url('/public/fontend')}}/css/colors/orange.css" />
-
+    <style>
+        .blog-dit {
+            padding: 10px 2% 0 2%;
+        }
+        .blog-dit p{
+            color:dimgray!important;
+        }
+    </style>  
     <!-- Modernizer -->
     <script src="{{url('/public/fontend')}}/js/modernizer.js"></script>
 
@@ -66,17 +73,17 @@
                             </div>
                             <div id="navbar" class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li class="active"><a href="#banner">Home</a></li>
+                                    <li class="active"><a href="{{ url('/') }}">Home</a></li>
                                     <li><a href="#about">About us</a></li>
+                                    <li><a href="#blog">VIP</a></li>
                                     <li><a href="#menu">Menu</a></li>
                                     <li><a href="#our_team">Team</a></li>
                                     <li><a href="#gallery">Gallery</a></li>
-                                    <li><a href="#blog">Blog</a></li>
                                     <li><a href="#pricing">pricing</a></li>
                                     @if (Auth::check())
                                         <li><a href="{{ url('/home') }}">Dashboard</a></li>
                                       @else
-                                        <li><a href="#login">Login</a></li>
+                                        <li><a href="{{ url('/login') }}">Login</a></li>
                                       @endif 
                                     
                                     <li><a href="#footer">Contact us</a></li>

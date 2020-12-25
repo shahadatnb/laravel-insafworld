@@ -103,11 +103,14 @@ Route::group(['middleware' => ['auth','admin']], function(){
 
 	Route::resource('youtubeLinks','PtcController');
 
-	//Route::resource('products','ProductController');
-	//Route::get('/productHide/{id}', 'ProductController@productHide')->name('productHide');
+	Route::resource('products','ProductController');
+	Route::resource('packs','PacController');
+	Route::get('/dailyBonusDist', 'PacController@bonusDist');
 
-	//Route::get('/productDelevery', 'ProductController@productDelevery')->name('productDelevery');
-	//Route::get('/productDeleveryConfirm/{id}', 'ProductController@productDeleveryConfirm')->name('productDeleveryConfirm');
+	Route::get('/productHide/{id}', 'ProductController@productHide')->name('productHide');
+
+	Route::get('/productDelevery', 'ProductController@productDelevery')->name('productDelevery');
+	Route::get('/productDeleveryConfirm/{id}', 'ProductController@productDeleveryConfirm')->name('productDeleveryConfirm');
 
 });
 

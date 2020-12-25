@@ -51,9 +51,11 @@ class AdminController extends Controller
         $data->confirm_by = Auth::User()->id;
         $data->save();
 
+        $data3 = Wallet::find($data->wallet_id);
+
         $data2 = new Wallet;
         $data2->user_id = $data->user_id;
-        $data2->receipt = $data->payment;
+        $data2->receipt = $data3->payment;
         $data2->remark = 'Refund Form Admin';
         $data2->receive = 1;
         $data2->wType = 'withdrawWallet';

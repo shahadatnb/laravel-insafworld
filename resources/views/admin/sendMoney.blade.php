@@ -34,7 +34,7 @@
         <!-- /.box-body -->
         <div class="card-footer">
           <p>Transaction List</p>
-          <table class="table">
+          <table class="table ">
             <tr>
               <th>Date</th>
               <th>Username</th>

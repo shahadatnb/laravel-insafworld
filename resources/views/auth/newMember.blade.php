@@ -2,7 +2,7 @@
 @section('content')
 <div class="content-wrapper">   
     <div class="card">
-      <div class="card-header bg-success with-border">
+      <div class="card-header bg-info with-border text-center">
         <strong class="card-title text-light">Filup your Information</strong>
       </div>
       <div class="card-body">
@@ -12,7 +12,7 @@
           <input type="hidden" name="referralId" value="{{ Auth::user()->id }}" required>
         <div class="row">
           <div class="col-md-12"> <br>
-          {{ Form::submit('Submit',array('class'=>'btn-block btn btn-success')) }}</div>
+          {{ Form::submit('Submit',array('class'=>'btn-block btn btn-info')) }}</div>
         </div>
        {!! Form::close() !!}
       </div>

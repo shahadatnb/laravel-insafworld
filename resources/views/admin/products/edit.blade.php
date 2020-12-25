@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Product')
+@section('title','VIP')
 @section('stylesheet')
   {!! Html::style('public/admin/vendor/summernote/summernote.min.css') !!}
   <style>
@@ -9,18 +9,7 @@
 @endsection
 @section('content')
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>Product</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Product</a></li>
-        <li class="active">Detail</li>
-      </ol>
-    
 
-    <!-- Main content -->
     
       {!! Form::model($product,['route'=>['products.update',$product->id],'method'=>'PUT', 'files' => true ]) !!}
       <!-- Default box -->
@@ -34,22 +23,6 @@
               @if($errors->has('title'))
                   <span class="help-block">{{ $errors->first('title') }}</span>
               @endif             
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              {{ Form::label('price','Price') }}
-              {{ Form::text('price',null,['class'=>'form-control']) }} 
-              @if($errors->has('price'))
-                  <span class="help-block">{{ $errors->first('price') }}</span>
-              @endif 
-            </div>
-            <div class="col-md-6">
-              {{ Form::label('cat_id','Product Category') }}
-              {{ Form::select('cat_id',$cats,null,['class'=>'form-control','placeholder'=>'Product Category']) }} 
-              @if($errors->has('cat_id'))
-                  <span class="help-block">{{ $errors->first('cat_id') }}</span>
-              @endif 
             </div>
           </div>
           <div class="row">

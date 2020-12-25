@@ -2,12 +2,12 @@
 @section('title','Rank')
 @section('content')
 <div class="content-wrapper">
-  <div class="card bg-primary text-white">
+  <div class="card">
     <div class="card-header">
       <h3 class="card-title">Rank List</h3>
     </div>
     <div class="card-body">
-      <table class="table table-bordered">
+      <table class="table table-striped">
         <tr>
           <th>ID</th>
           <th>Left + Right</th>

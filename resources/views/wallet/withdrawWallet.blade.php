@@ -9,7 +9,7 @@
         </div>
         <div class="card-body">
           <p>Transaction List</p>
-          <table class="table">
+          <table class="table table-striped">
             <tr>
               <th>Remark</th>
               <th>Receipt</th>
@@ -27,6 +27,8 @@
                 @if($item->adminWid != null)
                  @if($item->adminWattet->confirm ==1)
                     <span class="badge badge-success">Success</span> 
+                  @elseif($item->adminWattet->confirm ==2)
+                    <span class="badge badge-secondary">Cancel</span> 
                   @else
                     <span class="badge badge-warning">Pending</span>                      
                   @endif
@@ -41,14 +43,18 @@
           $accounts = [
             'bKash'=>'bKash',
             'Rocket'=>'Rocket',
-            'Others'=>'Others'
+            'Nagad'=>'Nagad',
+            'Bank '=>'Bank',
+            'Perfect money'=>'Perfect money',
+            'PayPal'=>'PayPal',
+            'btc'=>'btc',
           ];
         @endphp
       </div>
       <!-- /.box -->
       <div class="card">
-        <div class="card-header bg-info">
-          <strong class=" text-light">Withdraw balance</strong>
+        <div class="card-header text-center">
+          <strong>Withdraw balance</strong>
         </div>
         <div class="card-body card-block">
           @include('layouts._message')
@@ -67,10 +73,10 @@
             </div>
             <div class="row form-group">
               <div class="col-3">{{ Form::label('remark','Remark') }}</div>
-              <div class="col-9">{{ Form::text('remark',null,['class'=>'form-control','required'=>'']) }}</div>              
+              <div class="col-9">{{ Form::text('remark',null,['class'=>'form-control']) }}</div>              
             </div>
             <div class="row form-group">
-              {{ Form::submit('Send',array('class'=>'btn-block btn btn-primary')) }}
+              {{ Form::submit('Send',array('class'=>'btn-block btn btn-info')) }}
             </div>
 
           {!! Form::close() !!} 
