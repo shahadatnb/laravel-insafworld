@@ -18,7 +18,7 @@
   </div>
   <div class="row form-group">
     <div class="col">
-    {{ Form::submit('Transfer To Withdraw wallet',array('class'=>'btn-block btn btn-info')) }}</div>
+    {{ Form::submit('Transfer To Withdraw wallet',array('class'=>'btn btn-info')) }}</div>
   </div>
  {!! Form::close() !!}
 

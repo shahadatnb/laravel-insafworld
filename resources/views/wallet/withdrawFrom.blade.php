@@ -39,7 +39,7 @@
           <div class="col-9">{{ Form::text('remark',null,['class'=>'form-control','placeholder'=>'Remark']) }}</div>              
         </div>
         <div class="row form-group">
-          {{ Form::submit('Send',array('class'=>'btn-block btn btn-yellow')) }}
+          {{ Form::submit('Send',array('class'=>'btn btn-yellow')) }}
         </div>
 
       {!! Form::close() !!} 
