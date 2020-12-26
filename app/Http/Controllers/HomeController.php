@@ -144,9 +144,7 @@ class HomeController extends Controller
     public function withdrawWallet()
     {
         $transaction = $this->listBalance(Auth::user()->id,'withdrawWallet');
-        $receipt = Wallet::where('user_id',Auth::user()->id)->where('wType','withdrawWallet')->sum('receipt');
-        $payment = Wallet::where('user_id',Auth::user()->id)->whereIn('wType',['referralWallet','rankWallet','generationWallet','globalIncome'])->sum('payment');
-        $balance = $receipt-$payment;
+        $balance = $this->widBalance(Auth::user()->id);
         $wallet = 'withdrawWallet';
         $walletName = 'Withdraw Wallet';
         return view('wallet.withdrawWallet',compact('transaction','balance','walletName','wallet'));
@@ -381,43 +379,56 @@ class HomeController extends Controller
 
         if($request->wType == 'dailyWallet'){
             if($request->payment < Auth::user()->packeg->minWithdraw){
-                Session::flash('warning','Minimum Withdraw amount '.Auth::user()->packeg->minWithdraw);
+                Session::flash('warning','Sorry, Minimum Withdraw amount '.Auth::user()->packeg->minWithdraw);
                 return redirect()->back();
             }            
-        }
-
-        if($request->payment < $this->withdrowAmt ){
-            Session::flash('warning','Sorry, Withdraw request minimum Balance $'.$this->withdrowAmt.'.');
-        }elseif($this->balance(Auth::user()->id,'withdrawWallet') < $request->payment ){
-            Session::flash('warning','Sorry, Your Balance Less then $'.$request->payment);
         }else{
-            $payble = $request->payment - ($request->payment/100)*10;
-            $vat = $request->payment - $payble;
-            $remark = $request->bankName.': '.$request->accountNo.' Total: '.$request->payment.',10% Vat:'.$vat.' Payble: '.$payble.' '.$request->remark; 
-            $data2 = new AdminWallet;
-            $data2->user_id = Auth::user()->id;
-            $data2->payment = $payble;//round($payble);
-            //$data2->payment = $request->payment;
-            $data2->remark = $remark;           
-            //$data2->admin_id = 1;//$request->paymentId;
-            $data2->save();
-
-            
-            $data = new Wallet;
-            $data->user_id = Auth::user()->id;
-            //$data->payment = round($payble);
-            $data->payment = $request->payment;
-            $data->remark = $remark;
-            $data->wType = 'withdrawWallet';
-            $data->adminWid = $data2->id;
-            $data->save();
-
-            $data3 = AdminWallet::find($data2->id);
-            $data3->wallet_id = $data->id;
-            $data3->save();
-
-            Session::flash('success','Withdraw Processing, Please wait 24 hours');
+            if($request->payment < $this->withdrowAmt ){
+                Session::flash('warning','Sorry, Minimum Withdraw amount '.$this->withdrowAmt.'.');
+                return redirect()->back();
+            }
         }
+
+        if($request->wType == 'dailyWallet'){
+            if($this->balance(Auth::user()->id,'dailyWallet') < $request->payment ){
+                Session::flash('warning','Sorry, Your Balance Less then $'.$request->payment);
+                return redirect()->back();
+            }
+        }else{
+            if($this->widBalance(Auth::user()->id) < $request->payment ){
+                Session::flash('warning','Sorry, Your Balance Less then $'.$request->payment);
+                return redirect()->back();
+            }
+        }        
+
+        
+        $payble = $request->payment - ($request->payment/100)*10;
+        $vat = $request->payment - $payble;
+        $remark = $request->bankName.': '.$request->accountNo.' Total: '.$request->payment.',10% Vat:'.$vat.' Payble: '.$payble.' '.$request->remark; 
+        $data2 = new AdminWallet;
+        $data2->user_id = Auth::user()->id;
+        $data2->payment = $payble;//round($payble);
+        //$data2->payment = $request->payment;
+        $data2->remark = $remark;           
+        //$data2->admin_id = 1;//$request->paymentId;
+        $data2->save();
+
+        
+        $data = new Wallet;
+        $data->user_id = Auth::user()->id;
+        //$data->payment = round($payble);
+        $data->payment = $request->payment;
+        $data->remark = $remark;
+        $data->wType = $request->wType;//'withdrawWallet';
+        $data->adminWid = $data2->id;
+        $data->save();
+
+        $data3 = AdminWallet::find($data2->id);
+        $data3->wallet_id = $data->id;
+        $data3->save();
+
+        Session::flash('success','Withdraw Processing, Please wait 24 hours');
+        
         return redirect()->back();
     }
     

@@ -72,6 +72,14 @@ trait Wallets
         return $balance;
     }
 
+    public function widBalance($id)
+    {
+        $receipt = Wallet::where('user_id',$id)->whereIn('wType',['referralWallet','rankWallet','generationWallet','globalIncome','withdrawWallet'])->sum('receipt');
+        $payment = Wallet::where('user_id',$id)->where('wType','withdrawWallet')->sum('payment');
+        $balance = $receipt-$payment;
+        return $balance;
+    }
+
     public function totalBalance($id,$wType)
     {
         $receipt = Wallet::where('user_id',$id)->where('wType',$wType)->sum('receipt');
