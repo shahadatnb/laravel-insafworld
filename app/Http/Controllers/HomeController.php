@@ -36,23 +36,23 @@ class HomeController extends Controller
         $slotAmt = $this->slot();
         $user_id= Auth::user()->id;
        $wallets=$this->allBalance($user_id);
-       $wallets['withdrawTotal'] = ['balance'=>$this->totalBalance($user_id,'withdrawWallet'),'title'=>'Total Withdraw','bg'=>'info'];
-       $wallets['sponsorTotal'] = ['balance'=>$this->totalBalance($user_id,'sponsorWallet'),'title'=>'Total Sponsor Income','bg'=>'primary'];
-       $wallets['dailyWallet'] = ['balance'=>$this->totalBalance($user_id,'dailyWallet'),'title'=>'Total Daily Earn','bg'=>'success'];
-       $wallets['registeredTotal'] = ['balance'=>Auth::user()->sponsorChilds->count(),'title'=>'Total Registered','bg'=>'danger'];
-       $wallets['wrTotal'] = ['balance'=>$this->withdrawalRequest($user_id),'title'=>'Withdrawal Request Total','bg'=>'info'];
-       $wallets['wsTotal'] = ['balance'=>$this->withdrawalRequestSuccess($user_id),'title'=>'Withdrawal Success Total','bg'=>'primary'];
-       $wallets['frTotal'] = ['balance'=>$this->totalReceive($user_id),'title'=>'Total Fund Receive','bg'=>'success'];
-       $wallets['ftTotal'] = ['balance'=>$this->totalTransfar($user_id),'title'=>'Total Fund Transfer','bg'=>'danger'];
-       $wallets['lvTotal'] = ['balance'=>$slotAmt['lvTotal'],'title'=>'Total Left Value','bg'=>'info'];
-       $wallets['rvTotal'] = ['balance'=>$slotAmt['rvTotal'],'title'=>'Total Right Value','bg'=>'primary'];
+       $wallets['withdrawTotal'] = ['balance'=>$this->totalBalance($user_id,'withdrawWallet'),'title'=>'Total Withdraw','bg'=>'1'];
+       //$wallets['sponsorTotal'] = ['balance'=>$this->totalBalance($user_id,'sponsorWallet'),'title'=>'Total Sponsor Income','bg'=>'2'];
+       $wallets['dailyWallet'] = ['balance'=>$this->totalBalance($user_id,'dailyWallet'),'title'=>'Total Daily Earn','bg'=>'3'];
+       $wallets['registeredTotal'] = ['balance'=>Auth::user()->sponsorChilds->count(),'title'=>'Total Registered','bg'=>'4'];
+       $wallets['wrTotal'] = ['balance'=>$this->withdrawalRequest($user_id),'title'=>'Withdrawal Request Total','bg'=>'5'];
+       $wallets['wsTotal'] = ['balance'=>$this->withdrawalRequestSuccess($user_id),'title'=>'Withdrawal Success Total','bg'=>'6'];
+       $wallets['frTotal'] = ['balance'=>$this->totalReceive($user_id),'title'=>'Total Fund Receive','bg'=>'1'];
+       $wallets['ftTotal'] = ['balance'=>$this->totalTransfar($user_id),'title'=>'Total Fund Transfer','bg'=>'2'];
+       $wallets['lvTotal'] = ['balance'=>$slotAmt['lvTotal'],'title'=>'Total Seles Value-1','bg'=>'3'];
+       $wallets['rvTotal'] = ['balance'=>$slotAmt['rvTotal'],'title'=>'Total Seles Value-2','bg'=>'4'];
 
 
-       $percent=['balance'=>$this->ckDailyIncomePercent(Auth::user()),'title'=>'Total Daily Income','bg'=>'primary'];
-       $wallets2['rankName'] = ['balance'=>'Rank','title'=>$this->rank[Auth::user()->rank]['title'],'bg'=>'success'];
-       $wallets2['myPackeg'] = ['balance'=>Auth::user()->packeg->title,'title'=>'My Packeg','bg'=>'primary'];
+       $percent=['balance'=>$this->ckDailyIncomePercent(Auth::user()),'title'=>'Total Daily Income','bg'=>'5'];
+       $wallets2['rankName'] = ['balance'=>'Rank','title'=>$this->rank[Auth::user()->rank]['title'],'bg'=>'6'];
+       $wallets2['myPackeg'] = ['balance'=>Auth::user()->packeg->title,'title'=>'My Packeg','bg'=>'1'];
        if(Auth::user()->packeg_id == 8){
-        $wallets2['globalStatus'] = ['balance'=>Auth::user()->vip.' Star','title'=>'Global Status','bg'=>'danger'];
+        $wallets2['globalStatus'] = ['balance'=>Auth::user()->vip.' Star','title'=>'Global Status','bg'=>'3'];
         }
        //dd($wallets2); exit;
         return view('pages.dashboard',compact('wallets','wallets2','percent'));

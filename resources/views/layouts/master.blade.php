@@ -24,24 +24,32 @@
 	<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 	@yield('stylesheet')
 	<style>
-		.nav.navbar-nav li {
-			border-bottom: 1px solid deepskyblue;
+		*{font-weight: bold;}
+		.dash-profile {
+			padding: 10px;
+			display: block;
+			font-weight: bold;
 		}
 
+		.dash-profile img.user-avatar.rounded-circle {
+			max-width: 60px;
+		}
 		.right-panel header.header {
 			height: auto;
 		}
 	  .nav.navbar-nav.navbar-right li a {
-		  color: #e5ec0e;
+		  color: #0e61e4;
 	  }
 	  .nav.navbar-nav.navbar-right li a:hover,.navbar .navbar-nav li > a:hover {
-		  color: #e5ec0e;
+		  color: #1cc107;
 	  }
 	  .navbar .navbar-nav li > a {
-			color: #fff;
+			color: #000;
+		  font-weight: bold;
 		}
 	  .navbar .navbar-nav li > a .menu-icon {
-		color: #e5ec0e;
+		color: #f70018;
+		font-size:20px;
 	  }
 	  .navbar .menu-title {
 		color: #749715;
@@ -66,8 +74,30 @@
 		.right-panel .breadcrumbs {
 			margin-top: 0;
 		}
+		.bg-flat-color-1 {
+			background: #30c200;
+		}
+		.bg-flat-color-2 {
+			background: #71eabe;
+		}
+		.bg-flat-color-6 {
+			background: #ffc107;
+		}
+		.bg-flat-color-4 {
+			background: #ea0c0c;
+		}
+
+		.stat-widget-one .stat-digit {
+			color: #f8f9fa;
+			font-weight: bold;
+		}
+		.stat-widget-one .stat-text {
+			font-size: 15px;
+			color: #f8f9fa;
+			font-weight: bold;
+		}
 		.content {
-			background: rgba(0,0,0,.2);
+			background: rgba(0,0,0,1);
 			content: "";
 			width: 100%;
 			height: 100%;
@@ -75,19 +105,26 @@
 		}
 
 		.form-control {
-			background: transparent;
-			border-bottom: 1px solid !important;
-			border: 0;
-		}
+    background: transparent;
+    border: 2px dotted;
+}
 	</style>
 </head>
 
 <body>
 	<!-- Left Panel -->
 	<aside id="left-panel" class="left-panel">
-		<nav class="navbar navbar-expand-sm  navbar-secondary">{{-- navbar-default --}}
+		<nav class="navbar navbar-expand-sm">{{-- navbar-default --}}
+				<a href="{{ url('/profile')}}" class="dash-profile text-center">
+					@if(Auth::user()->photo != null )
+						<img src="{{ url('/')}}/public/upload/member/{{ Auth::user()->photo }}" class="user-avatar rounded-circle" alt="">
+					@else
+						<img class="user-avatar rounded-circle" src="{{ url('/')}}/public/admin/images/avatar.png">
+					@endif
+					&nbsp; {{Auth::user()->name}}
+				</a>
 			<div id="main-menu" class="main-menu collapse navbar-collapse">
-				<ul class="nav navbar-nav bg-secondary">
+				<ul class="nav navbar-nav">
 				@if(Auth::user()->admin==1)
 					<li class="menu-title">Admin</li><!-- /.menu-title -->
 					<li>
@@ -202,7 +239,7 @@
 							@if(Auth::user()->photo != null )
 							  <img src="{{ url('/')}}/public/upload/member/{{ Auth::user()->photo }}" class="user-avatar rounded-circle" alt="">
 							@else
-							  <img class="user-avatar rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+							  <img class="user-avatar rounded-circle" src="{{ url('/')}}/public/admin/images/avatar.png">
 							@endif
 							&nbsp; {{Auth::user()->name}}
 						</a>
@@ -280,6 +317,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 	<script src="{{url('/public/admin')}}/assets/js/main.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
 	@yield('scripts')
 </body>
 </html>

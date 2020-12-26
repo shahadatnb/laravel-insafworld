@@ -9,8 +9,9 @@
 
 	    	<div class="hv-item-parent">
 	    		<a href="{{ route('levelTreeId',$member->id) }}">
-                	<p class="simple-card text-center"><img width="50" src="{{ url('/') }}/public/admin/images/logo3.png" alt=""><br>{{ $member->username }} <br>
-                          <span>LT#{{ App\User::myChildLR($member->id, 1) }}</span> - <span>RT#{{ App\User::myChildLR($member->id, 2) }}</span>
+                	<p class="simple-card text-center" data-toggle="tooltip" data-html="true" title="Username: <em>{{ $member->username }}</em><br>Name: <em>{{ $member->name }}</em><br>Email: <u>{{ $member->email }}</u>">
+<img width="50" src="{{ url('/')}}/public/admin/images/avatar.png" alt=""> <br>
+                          <span>Sales Velue 1:{{ App\User::myChildLR($member->id, 1) }}</span> - <span>Sales Velue 2:{{ App\User::myChildLR($member->id, 2) }}</span>
                         </p>
                 </a>
             </div>

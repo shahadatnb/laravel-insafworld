@@ -3,7 +3,7 @@
 <div class="content-wrapper">   
     <div class="card">
       <div class="card-header bg-info with-border text-center">
-        <strong class="card-title text-light">Filup your Information</strong>
+        <strong class="card-title text-light">Your Information</strong>
       </div>
       <div class="card-body">
       @include('layouts._message')

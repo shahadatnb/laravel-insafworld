@@ -10,13 +10,13 @@ use App\User;
 trait Wallets
 {
     public $wallets =[
-      'currentWallet'=>['title'=>'Current Wallet','bg'=>'primary','wid'=>1,'trns'=>0,'wid_d'=>0],
-      'registerWallet'=>['title'=>'Register Wallet','bg'=>'success','wid'=>0,'trns'=>1,'wid_d'=>0],
-      'dailyWallet'=>['title'=>'Daily Income Wallet','bg'=>'danger','wid'=>1,'trns'=>0,'wid_d'=>30],
-      'referralWallet'=>['title'=>'Referral Wallet','bg'=>'info','wid'=>1,'trns'=>0,'wid_d'=>0],
-      'rankWallet'=>['title'=>'Rank Wallet','bg'=>'primary','wid'=>1,'trns'=>0,'wid_d'=>0],
-      'generationWallet'=>['title'=>'Generation Income','bg'=>'success','wid'=>1,'trns'=>0,'wid_d'=>0],
-      'globalIncome'=>['title'=>'Global Income','bg'=>'danger','wid'=>1,'trns'=>0,'wid_d'=>0],
+      'currentWallet'=>['title'=>'Current Wallet','bg'=>'3','wid'=>1,'trns'=>0,'wid_d'=>0],
+      'registerWallet'=>['title'=>'Register Wallet','bg'=>'4','wid'=>0,'trns'=>1,'wid_d'=>1],
+      'dailyWallet'=>['title'=>'Daily Income Wallet','bg'=>'5','wid'=>1,'trns'=>0,'wid_d'=>1],
+      'referralWallet'=>['title'=>'Referral Wallet','bg'=>'6','wid'=>1,'trns'=>0,'wid_d'=>0],
+      'rankWallet'=>['title'=>'Rank Wallet','bg'=>'1','wid'=>1,'trns'=>0,'wid_d'=>0],
+      'generationWallet'=>['title'=>'Generation Income','bg'=>'2','wid'=>1,'trns'=>0,'wid_d'=>0],
+      'globalIncome'=>['title'=>'Global Income','bg'=>'3','wid'=>1,'trns'=>0,'wid_d'=>0],
       //'matchingWallet'=>['title'=>'Matching Wallet','bg'=>'1','wid'=>1,'trns'=>0,'wid_d'=>0],
     ];
 
@@ -81,7 +81,9 @@ trait Wallets
     public function allBalance($id){
         $balances = [];
             foreach ($this->wallets as $key=>$value) {
+                if($value['wid_d']==1){
                 $balances[$key] = ['balance'=>$this->balance($id,$key),'title'=>$value['title'],'bg'=>$value['bg']];
+                }
             }
         return $balances;
     }

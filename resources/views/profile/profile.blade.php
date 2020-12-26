@@ -63,11 +63,11 @@
 
           <!-- Profile Image -->
           <div class="card box-primary">
-            <div class="card-body box-profile">
+            <div class="card-body text-center">
               @if(Auth::user()->photo != null )
               <img class="profile-user-img img-responsive img-circle" src="{{url('/')}}/public/upload/member/{{ Auth::user()->photo }}" alt="profile picture">
               @else
-              <img src="{{ url('/')}}/public/admin/dist/img/avatar5.png" class="img-circle" alt="User Image">
+              <img src="{{ url('/')}}/public/admin/images/avatar.png" class="img-circle" alt="User Image">
               @endif
 
               <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>

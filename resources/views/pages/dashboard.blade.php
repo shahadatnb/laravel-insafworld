@@ -9,11 +9,11 @@
 </div>
 <div class="row">
   <div class="col-sm-6 col-lg-4">
-    <div class="card">
+    <div class="card text-white bg-flat-color-{{$percent['bg']}}">
       <div class="card-body">
           <div class="stat-widget-one">
               <div class="stat-icon dib">
-                <i class="ti-money text-{{$percent['bg']}} border-{{$percent['bg']}}"></i>
+                <i class="ti-money text-{{$percent['bg']}} border-"></i>
               </div>
               <div class="stat-content dib">
                   <div class="stat-digit">{{$percent['balance']}}%</div>
@@ -25,7 +25,7 @@
   </div>
 @foreach($wallets2 as $item)
   <div class="col-sm-6 col-lg-4">
-    <div class="card">
+    <div class="card text-white bg-flat-color-{{$item['bg']}}">
       <div class="card-body">
           <div class="stat-widget-one">
               <div class="stat-icon dib">
@@ -58,7 +58,7 @@
   @endforeach
   @foreach($wallets as $item)
   <div class="col-sm-6 col-lg-4">
-    <div class="card">
+    <div class="card text-white bg-flat-color-{{$item['bg']}}">
       <div class="card-body">
           <div class="stat-widget-one">
               <div class="stat-icon dib">
