@@ -58,7 +58,7 @@ class AdminController extends Controller
         $data2->receipt = $data3->payment;
         $data2->remark = 'Refund Form Admin';
         $data2->receive = 1;
-        $data2->wType = 'withdrawWallet';
+        $data2->wType = $data3->wType;//'withdrawWallet';
         $data2->save();
 
         return redirect()->route('withdrawWetting');
