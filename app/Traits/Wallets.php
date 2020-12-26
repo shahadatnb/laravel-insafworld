@@ -13,10 +13,10 @@ trait Wallets
       'currentWallet'=>['title'=>'Current Wallet','bg'=>'3','wid'=>1,'trns'=>0,'wid_d'=>0],
       'registerWallet'=>['title'=>'Register Wallet','bg'=>'4','wid'=>0,'trns'=>1,'wid_d'=>1],
       'dailyWallet'=>['title'=>'Daily Income Wallet','bg'=>'5','wid'=>1,'trns'=>0,'wid_d'=>1,'dailyWallet'=>1],
-      'referralWallet'=>['title'=>'Referral Wallet','bg'=>'6','wid'=>1,'trns'=>0,'wid_d'=>0],
-      'rankWallet'=>['title'=>'Rank Wallet','bg'=>'1','wid'=>1,'trns'=>0,'wid_d'=>0],
-      'generationWallet'=>['title'=>'Generation Income','bg'=>'2','wid'=>1,'trns'=>0,'wid_d'=>0],
-      'globalIncome'=>['title'=>'Global Income','bg'=>'3','wid'=>1,'trns'=>0,'wid_d'=>0],
+      'referralWallet'=>['title'=>'Referral Report','bg'=>'6','wid'=>1,'trns'=>0,'wid_d'=>0],
+      'rankWallet'=>['title'=>'Rank Report','bg'=>'1','wid'=>1,'trns'=>0,'wid_d'=>0],
+      'generationWallet'=>['title'=>'Generation Income Report','bg'=>'2','wid'=>1,'trns'=>0,'wid_d'=>0],
+      'globalIncome'=>['title'=>'Global Income Report','bg'=>'3','wid'=>1,'trns'=>0,'wid_d'=>0],
       //'matchingWallet'=>['title'=>'Matching Wallet','bg'=>'1','wid'=>1,'trns'=>0,'wid_d'=>0],
     ];
 
