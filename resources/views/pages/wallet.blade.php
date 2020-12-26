@@ -8,9 +8,8 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header bg-info with-border">
-          <strong class="card-title text-light">Your {{$walletInfo['title']}}
-          @if(!array_has($walletInfo,'dailyWallet')) Total @endif
-          Income <i class="fa fa-dollar"></i>{{ $balance }}</strong>
+          <strong class="card-title text-light">Your {{$walletInfo['title']}}</strong>
+          @if(array_has($walletInfo,'dailyWallet')), Balance ${{ $balance }} @endif
         </div>
         <div class="card-body">
           <p>Transaction List</p>
