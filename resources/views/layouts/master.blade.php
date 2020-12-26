@@ -110,6 +110,21 @@
     border: 0;
 			border-bottom: 1px solid #f70018;
 }
+
+.btn-yellow {
+  background: rgb(247, 255, 71);
+  color: #574500;
+  border: none;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+.btn-yellow:hover, .btn-yellow:focus {
+  background: rgb(205, 213, 32);
+}
+.btn-yellow:active {
+  background: rgb(205, 213, 32);
+}
 	</style>
 </head>
 

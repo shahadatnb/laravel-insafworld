@@ -24,7 +24,7 @@
       {{ Form::text('remark',null,['class'=>'form-control']) }}
     </div>
     <div class="col-md-6">
-      {{ Form::submit('Transtfar',array('class'=>'btn-block btn btn-primary')) }}
+      {{ Form::submit('Transtfar',array('class'=>'btn-block btn btn-yellow')) }}
     </div>
   </div>
  {!! Form::close() !!}

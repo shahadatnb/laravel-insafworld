@@ -12,7 +12,7 @@
           <input type="hidden" name="referralId" value="{{ Auth::user()->id }}" required>
         <div class="row">
           <div class="col-md-12"> <br>
-          {{ Form::submit('Submit',array('class'=>'btn-block btn btn-info')) }}</div>
+          {{ Form::submit('Submit',array('class'=>'btn-block btn btn-yellow')) }}</div>
         </div>
        {!! Form::close() !!}
       </div>
