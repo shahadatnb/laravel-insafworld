@@ -7,8 +7,8 @@
 
       <!-- Default box -->
       <div class="card">
-        <div class="card-header bg-success with-border">
-          <strong class="card-title text-light">Your {{$walletName}} Balance <i class="fa fa-dollar"></i>{{ $balance }}</strong>
+        <div class="card-header bg-yellow with-border">
+          <strong class="card-title">Your {{$walletName}} Balance <i class="fa fa-dollar"></i>{{ $balance }}</strong>
         </div>
         <div class="card-body">
           <p>Transaction List</p>

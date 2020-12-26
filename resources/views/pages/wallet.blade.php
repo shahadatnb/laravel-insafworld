@@ -7,8 +7,8 @@
 
       <!-- Default box -->
       <div class="card">
-        <div class="card-header bg-info with-border">
-          <strong class="card-title text-light">Your {{$walletInfo['title']}}</strong>
+        <div class="card-header bg-yellow with-border">
+          <strong class="card-title">Your {{$walletInfo['title']}}</strong>
           @if(array_has($walletInfo,'dailyWallet')), Balance ${{ $balance }} @endif
         </div>
         <div class="card-body">

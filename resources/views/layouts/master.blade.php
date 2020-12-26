@@ -111,10 +111,10 @@
 			border-bottom: 1px solid #f70018;
 }
 
-.btn-yellow {
+.btn-yellow, .bg-yellow {
   background: rgb(247, 255, 71);
-  color: #574500;
-  border: none;
+  color: #000;
+  font-weight: bold;
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
