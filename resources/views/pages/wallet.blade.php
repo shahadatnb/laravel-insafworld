@@ -8,7 +8,9 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header bg-info with-border">
-          <strong class="card-title text-light">Your {{$walletInfo['title']}} Balance <i class="fa fa-dollar"></i>{{ $balance }}</strong>
+          <strong class="card-title text-light">Your {{$walletInfo['title']}}
+          @if(!array_has($walletInfo,'dailyWallet')) Total @endif
+          Income <i class="fa fa-dollar"></i>{{ $balance }}</strong>
         </div>
         <div class="card-body">
           <p>Transaction List</p>
@@ -31,11 +33,11 @@
         </div>
         <!-- /.box-body -->
          <div class="card-footer">
-           @if($walletInfo['wid']==1)
-            @include('wallet.sendMoneyWw')
-           @endif
            @if($walletInfo['trns']==1)
             @include('wallet.sendMoneyAc')
+           @endif
+           @if(array_has($walletInfo,'dailyWallet'))
+            @include('wallet.withdrawFrom')
            @endif
         </div>
         <!-- /.box-footer-->

@@ -1,8 +1,8 @@
 <div class="row form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-    <label for="name" class="col-12 text-left">Full Name</label>
+    {{-- <label for="name" class="col-12 text-left">Full Name</label> --}}
 
     <div class="col-12">
-        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+        <input id="name" type="text" class="form-control" name="name" placeholder="Full Name" value="{{ old('name') }}" required autofocus>
 
         @if ($errors->has('name'))
             <span class="help-block">
@@ -13,10 +13,10 @@
 </div>
 
 <div class="row form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-    <label for="username" class="col-12 text-left">Username</label>
+    {{-- <label for="username" class="col-12 text-left">Username</label> --}}
 
     <div class="col-12">
-        <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
+        <input id="username" type="text" class="form-control" name="username" placeholder="Username" value="{{ old('username') }}" required autofocus>
 
         @if ($errors->has('username'))
             <span class="help-block">
@@ -27,10 +27,10 @@
 </div>
 
 <div class="row form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-    <label for="email" class="col-12 text-left">E-Mail Address</label>
+    {{-- <label for="email" class="col-12 text-left">E-Mail Address</label> --}}
 
     <div class="col-12">
-        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+        <input id="email" type="email" class="form-control" name="email" placeholder="E-Mail Address" value="{{ old('email') }}" required>
 
         @if ($errors->has('email'))
             <span class="help-block">
@@ -40,11 +40,11 @@
     </div>
 </div>
 
-<div class="row form-group{{-- $errors->has('mobile') ? ' has-error' : '' --}}">
-    <label for="mobile" class="col-12 text-left">Mobile No</label>
+<div class="row form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
+    {{-- <label for="mobile" class="col-12 text-left">Mobile No</label> --}}
 
     <div class="col-12">
-        <input id="mobile" type="text" class="form-control" name="mobile" value="{{ old('mobile') }}" required>
+        <input id="mobile" type="text" class="form-control" name="mobile" placeholder="Mobile No" value="{{ old('mobile') }}" required>
 
         @if ($errors->has('mobile'))
             <span class="help-block">
@@ -55,10 +55,10 @@
 </div>
 
 <div class="row form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-    <label for="password" class="col-12 text-left">Password</label>
+    {{-- <label for="password" class="col-12 text-left">Password</label> --}}
 
     <div class="col-12">
-        <input id="password" type="password" class="form-control" name="password" required>
+        <input id="password" type="password" class="form-control" placeholder="Password" name="password" required>
 
         @if ($errors->has('password'))
             <span class="help-block">
@@ -69,15 +69,15 @@
 </div>
 
 <div class="row form-group">
-    <label for="password-confirm" class="col-12 text-left">Confirm Password</label>
+    {{-- <label for="password-confirm" class="col-12 text-left">Confirm Password</label> --}}
 
     <div class="col-12">
-        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+        <input id="password-confirm" type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required>
     </div>
 </div>
 
 <div class="row form-group{{ $errors->has('hand') ? ' has-error' : '' }}">
-    <label for="hand" class="col-12 text-right">Side</label>
+    {{-- <label for="hand" class="col-12 text-right">Side</label> --}}
 
     <div class="col-12">
         {{ Form::select('hand', ['1' => 'Left Side', '2' => 'Right Side'
@@ -137,10 +137,10 @@
 </div> --}}
 
 <div class="row form-group{{ $errors->has('placementUsername') ? ' has-error' : '' }}">
-    <label for="placementUsername" class="col-12 text-left">Placement Username</label>
+    {{-- <label for="placementUsername" class="col-12 text-left">Placement Username</label> --}}
 
     <div class="col-12">
-        <input id="placementUsername" type="text" class="form-control" name="placementUsername" value="{{ old('placementUsername') }}" required>
+        <input id="placementUsername" type="text" class="form-control" placeholder="Placement Username" name="placementUsername" value="{{ old('placementUsername') }}" required>
 
         @if ($errors->has('placementUsername'))
             <span class="help-block">
@@ -151,7 +151,7 @@
 </div>
 
 <div class="row form-group{{ $errors->has('packeg') ? ' has-error' : '' }}">
-    <label for="packeg" class="col-12 text-left">Select Packeg</label>
+    {{-- <label for="packeg" class="col-12 text-left">Select Packeg</label> --}}
 
     <div class="col-12">
         {{ Form::select('packeg',$packeg,null,['class'=>'form-control','required'=>'','placeholder'=>'Select Packeg']) }} 
@@ -165,7 +165,7 @@
 </div>
 
 <div class="row form-group">
-    <label for="country" class="col-12 text-left">Select Country</label>
+    {{-- <label for="country" class="col-12 text-left">Select Country</label> --}}
 
     <div class="col-12">
         <select id="country" name="country" class="form-control">

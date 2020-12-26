@@ -14,7 +14,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header with-border">
-          Packegs List <a href="{{url('dailyBonusDist')}}" class="btn btn-primary">Daily Bonus Dist</a>
+          Packegs List {{-- <a href="{{url('dailyBonusDist')}}" class="btn btn-primary">Daily Bonus Dist</a> --}}
         </div>
         <div class="card-body">
           @include('layouts._message')           

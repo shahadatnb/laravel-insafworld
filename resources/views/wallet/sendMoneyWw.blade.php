@@ -1,7 +1,7 @@
  @include('layouts._message')
   <h3 class="card-header text-center">Transfer To Withdraw wallet</h3>
   {!! Form::open(['route'=>'sendMoneyWw','method'=>'POST','class'=>'form-horizontal mt-2']) !!}
-    {{ Form::hidden('wType',$wallet) }} 
+    {{ Form::hidden('wType',$wallet) }}
   <div class="row form-group">
     <div class="col-md-2">
       {{ Form::label('payment','Amount') }}

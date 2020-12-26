@@ -144,9 +144,12 @@ class HomeController extends Controller
     public function withdrawWallet()
     {
         $transaction = $this->listBalance(Auth::user()->id,'withdrawWallet');
-        $balance = $this->balance(Auth::user()->id,'withdrawWallet');
+        $receipt = Wallet::where('user_id',Auth::user()->id)->where('wType','withdrawWallet')->sum('receipt');
+        $payment = Wallet::where('user_id',Auth::user()->id)->whereIn('wType',['referralWallet','rankWallet','generationWallet','globalIncome'])->sum('payment');
+        $balance = $receipt-$payment;
+        $wallet = 'withdrawWallet';
         $walletName = 'Withdraw Wallet';
-        return view('wallet.withdrawWallet',compact('transaction','balance','walletName'));
+        return view('wallet.withdrawWallet',compact('transaction','balance','walletName','wallet'));
     }
 
     public function rank(){
@@ -375,6 +378,13 @@ class HomeController extends Controller
             'payment' => 'required|numeric|min:'.$this->withdrowAmt,
             )
         );
+
+        if($request->wType == 'dailyWallet'){
+            if($request->payment < Auth::user()->packeg->minWithdraw){
+                Session::flash('warning','Minimum Withdraw amount '.Auth::user()->packeg->minWithdraw);
+                return redirect()->back();
+            }            
+        }
 
         if($request->payment < $this->withdrowAmt ){
             Session::flash('warning','Sorry, Withdraw request minimum Balance $'.$this->withdrowAmt.'.');
