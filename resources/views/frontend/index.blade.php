@@ -47,11 +47,11 @@
                 <!-- end col -->
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <img class="img-thumbnail" src="{{url('/public/fontend')}}/images/1/Plan.jpg" alt="#" />
-                        {{-- <div class="about-images">
+                        {{-- <img class="img-thumbnail" src="{{url('/public/fontend')}}/images/1/Plan.jpg" alt="#" /> --}}
+                        <div class="about-images">
                             <img class="about-main" src="{{url('/public/fontend')}}/images/about-main.jpg" alt="About Main Image">
                             <img class="about-inset" src="{{url('/public/fontend')}}/images/about-inset.jpg" alt="About Inset Image">
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
                 <!-- end col -->
@@ -115,6 +115,76 @@
                     <div class="special-box">
                         <div id="owl-demo">
                             <div class="item item-type-zoom">
+                                <a href="#" class="item-hover">
+                                    <div class="item-info">
+                                        <div class="headline">
+                                            SALMON STEAK
+                                            <div class="line"></div>
+                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="item-img">
+                                    <img src="images/special-menu-1.jpg" alt="sp-menu">
+                                </div>
+                            </div>
+                            <div class="item item-type-zoom">
+                                <a href="#" class="item-hover">
+                                    <div class="item-info">
+                                        <div class="headline">
+                                            ITALIAN PIZZA
+                                            <div class="line"></div>
+                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="item-img">
+                                    <img src="images/special-menu-2.jpg" alt="sp-menu">
+                                </div>
+                            </div>
+                            <div class="item item-type-zoom">
+                                <a href="#" class="item-hover">
+                                    <div class="item-info">
+                                        <div class="headline">
+                                            VEG. ROLL
+                                            <div class="line"></div>
+                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="item-img">
+                                    <img src="images/special-menu-3.jpg" alt="sp-menu">
+                                </div>
+                            </div>
+                            <div class="item item-type-zoom">
+                                <a href="#" class="item-hover">
+                                    <div class="item-info">
+                                        <div class="headline">
+                                            SALMON STEAK
+                                            <div class="line"></div>
+                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="item-img">
+                                    <img src="images/special-menu-1.jpg" alt="sp-menu">
+                                </div>
+                            </div>
+                            <div class="item item-type-zoom">
+                                <a href="#" class="item-hover">
+                                    <div class="item-info">
+                                        <div class="headline">
+                                            VEG. ROLL
+                                            <div class="line"></div>
+                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="item-img">
+                                    <img src="images/special-menu-2.jpg" alt="sp-menu">
+                                </div>
+                            </div>
+                            {{-- <div class="item item-type-zoom">
                                 <div class="item-img">
                                     <img src="{{url('/public/fontend')}}/images/1/Starting.jpg" alt="sp-menu">
                                 </div>
@@ -154,7 +224,7 @@
                                     <img src="{{url('/public/fontend')}}/images/1/Project.jpg" alt="sp-menu">
                                 </div>
                             </div>
-                            
+                             --}}
                         </div>
                     </div>
                     <!-- end special-box -->
