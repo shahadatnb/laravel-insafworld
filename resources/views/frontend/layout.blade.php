@@ -66,8 +66,8 @@
                                 </button>
                                 <div class="logo">
                                     <a class="navbar-brand js-scroll-trigger logo-header" href="#">
-                                        <h1>Insaf World</h1>
-                                        {{-- <img src="{{url('/public/fontend')}}/images/logo.png" alt=""> --}}
+                                        {{-- <h1>Insaf World</h1> --}}
+                                        <img src="{{url('/public/fontend')}}/images/1/welcome.jpg" alt="">
                                     </a>
                                 </div>
                             </div>

@@ -35,9 +35,6 @@
            @if($walletInfo['trns']==1)
             @include('wallet.sendMoneyAc')
            @endif
-           @if(array_has($walletInfo,'dailyWallet'))
-            @include('wallet.withdrawFrom')
-           @endif
         </div>
         <!-- /.box-footer-->
       </div>

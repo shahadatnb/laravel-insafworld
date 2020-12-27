@@ -42,17 +42,16 @@
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia, nostrud exercitation ullamco. </p>
 
                         <p> Aenean commodo ligula eget dolor aenean massa. Cum sociis nat penatibu set magnis dis parturient montes, nascetur ridiculus mus. quam felisorat, ultricies nec, Aenean commodo ligula eget dolor penatibu set magnis is parturient montes, nascetur ridiculus mus. quam felisorat, ultricies nec, pellentesque eu, pretium quis, sem. quat massa quis enim. Donec vitae sapien ut libero venenatis fauci Nullam quis ante. Etiam sit amet rci eget eros. </p>
-
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia, nostrud exercitation ullamco. </p>
                     </div>
                 </div>
                 <!-- end col -->
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                        <div class="about-images">
+                        <img class="img-thumbnail" src="{{url('/public/fontend')}}/images/1/Plan.jpg" alt="#" />
+                        {{-- <div class="about-images">
                             <img class="about-main" src="{{url('/public/fontend')}}/images/about-main.jpg" alt="About Main Image">
                             <img class="about-inset" src="{{url('/public/fontend')}}/images/about-inset.jpg" alt="About Inset Image">
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <!-- end col -->
@@ -116,75 +115,46 @@
                     <div class="special-box">
                         <div id="owl-demo">
                             <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            SALMON STEAK
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
                                 <div class="item-img">
-                                    <img src="{{url('/public/fontend')}}/images/special-menu-1.jpg" alt="sp-menu">
+                                    <img src="{{url('/public/fontend')}}/images/1/Starting.jpg" alt="sp-menu">
                                 </div>
                             </div>
                             <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            ITALIAN PIZZA
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
                                 <div class="item-img">
-                                    <img src="{{url('/public/fontend')}}/images/special-menu-2.jpg" alt="sp-menu">
+                                    <img src="{{url('/public/fontend')}}/images/1/Generation.jpg" alt="sp-menu">
                                 </div>
                             </div>
                             <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            VEG. ROLL
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
                                 <div class="item-img">
-                                    <img src="{{url('/public/fontend')}}/images/special-menu-3.jpg" alt="sp-menu">
+                                    <img src="{{url('/public/fontend')}}/images/1/Global.jpg" alt="sp-menu">
                                 </div>
                             </div>
                             <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            SALMON STEAK
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
                                 <div class="item-img">
-                                    <img src="{{url('/public/fontend')}}/images/special-menu-1.jpg" alt="sp-menu">
+                                    <img src="{{url('/public/fontend')}}/images/1/Pac-Gold-plan.jpg" alt="sp-menu">
                                 </div>
                             </div>
                             <div class="item item-type-zoom">
-                                <a href="#" class="item-hover">
-                                    <div class="item-info">
-                                        <div class="headline">
-                                            VEG. ROLL
-                                            <div class="line"></div>
-                                            <div class="dit-line">Lorem ipsum dolor sit amet, consectetur adip aliqua. Ut enim ad minim venia.</div>
-                                        </div>
-                                    </div>
-                                </a>
                                 <div class="item-img">
-                                    <img src="{{url('/public/fontend')}}/images/special-menu-2.jpg" alt="sp-menu">
+                                    <img src="{{url('/public/fontend')}}/images/1/Pack-Active.jpg" alt="sp-menu">
                                 </div>
                             </div>
+                            <div class="item item-type-zoom">
+                                <div class="item-img">
+                                    <img src="{{url('/public/fontend')}}/images/1/Pac-Moon_sun.jpg" alt="sp-menu">
+                                </div>
+                            </div>
+                            <div class="item item-type-zoom">
+                                <div class="item-img">
+                                    <img src="{{url('/public/fontend')}}/images/1/Pac-Super-sun.jpg" alt="sp-menu">
+                                </div>
+                            </div>
+                            <div class="item item-type-zoom">
+                                <div class="item-img">
+                                    <img src="{{url('/public/fontend')}}/images/1/Project.jpg" alt="sp-menu">
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <!-- end special-box -->

@@ -36,23 +36,23 @@ class HomeController extends Controller
         $slotAmt = $this->slot();
         $user_id= Auth::user()->id;
        $wallets=$this->allBalance($user_id);
-       $wallets['withdrawTotal'] = ['balance'=>$this->totalBalance($user_id,'withdrawWallet'),'title'=>'Total Withdraw','bg'=>'1'];
+       $wallets['withdrawTotal'] = ['balance'=>$this->widBalance($user_id),'title'=>'Total Withdraw','bg'=>'1'];
        //$wallets['sponsorTotal'] = ['balance'=>$this->totalBalance($user_id,'sponsorWallet'),'title'=>'Total Sponsor Income','bg'=>'2'];
-       $wallets['dailyWallet'] = ['balance'=>$this->totalBalance($user_id,'dailyWallet'),'title'=>'Total Daily Earn','bg'=>'3'];
-       $wallets['registeredTotal'] = ['balance'=>Auth::user()->sponsorChilds->count(),'title'=>'Total Registered','bg'=>'4'];
-       $wallets['wrTotal'] = ['balance'=>$this->withdrawalRequest($user_id),'title'=>'Withdrawal Request Total','bg'=>'5'];
-       $wallets['wsTotal'] = ['balance'=>$this->withdrawalRequestSuccess($user_id),'title'=>'Withdrawal Success Total','bg'=>'6'];
-       $wallets['frTotal'] = ['balance'=>$this->totalReceive($user_id),'title'=>'Total Fund Receive','bg'=>'1'];
-       $wallets['ftTotal'] = ['balance'=>$this->totalTransfar($user_id),'title'=>'Total Fund Transfer','bg'=>'2'];
-       $wallets['lvTotal'] = ['balance'=>$slotAmt['lvTotal'],'title'=>'Total Seles Value-1','bg'=>'3'];
-       $wallets['rvTotal'] = ['balance'=>$slotAmt['rvTotal'],'title'=>'Total Seles Value-2','bg'=>'4'];
+       $wallets['dailyWallet'] = ['balance'=>$this->totalBalance($user_id,'dailyWallet'),'title'=>'Total Profit','bg'=>'3'];
+       //$wallets['registeredTotal'] = ['balance'=>Auth::user()->sponsorChilds->count(),'title'=>'Total Registered','bg'=>'4'];
+       //$wallets['wrTotal'] = ['balance'=>$this->withdrawalRequest($user_id),'title'=>'Withdrawal Request Total','bg'=>'5'];
+       //$wallets['wsTotal'] = ['balance'=>$this->withdrawalRequestSuccess($user_id),'title'=>'Withdrawal Success Total','bg'=>'6'];
+       //$wallets['frTotal'] = ['balance'=>$this->totalReceive($user_id),'title'=>'Total Fund Receive','bg'=>'1'];
+       //$wallets['ftTotal'] = ['balance'=>$this->totalTransfar($user_id),'title'=>'Total Fund Transfer','bg'=>'2'];
+       $wallets['lvTotal'] = ['balance'=>$slotAmt['lvTotal'],'title'=>'Volume 1','bg'=>'3'];
+       $wallets['rvTotal'] = ['balance'=>$slotAmt['rvTotal'],'title'=>'Volume 2','bg'=>'4'];
 
-
-       $percent=['balance'=>$this->ckDailyIncomePercent(Auth::user()),'title'=>'Total Daily Income','bg'=>'5'];
-       $wallets2['rankName'] = ['balance'=>'Rank','title'=>$this->rank[Auth::user()->rank]['title'],'bg'=>'6'];
-       $wallets2['myPackeg'] = ['balance'=>Auth::user()->packeg->title,'title'=>'My Packeg','bg'=>'1'];
+       $wallets2 = array();
+       $percent=['balance'=>$this->ckDailyIncomePercent(Auth::user()),'title'=>'Profit','bg'=>'5'];
+       //$wallets2['rankName'] = ['balance'=>'Rank','title'=>$this->rank[Auth::user()->rank]['title'],'bg'=>'6'];
+       //$wallets2['myPackeg'] = ['balance'=>Auth::user()->packeg->title,'title'=>'My Packeg','bg'=>'1'];
        if(Auth::user()->packeg_id == 8){
-        $wallets2['globalStatus'] = ['balance'=>Auth::user()->vip.' Star','title'=>'Global Status','bg'=>'3'];
+        //$wallets2['globalStatus'] = ['balance'=>Auth::user()->vip.' Star','title'=>'Global Status','bg'=>'3'];
         }
        //dd($wallets2); exit;
         return view('pages.dashboard',compact('wallets','wallets2','percent'));
@@ -141,12 +141,43 @@ class HomeController extends Controller
         return view('pages.wallet',compact('transaction','balance','walletInfo','wallet'));
     }
 
+    public function withdrawals($type,$type2)
+    {
+        if($type=='AgentWithdrawals'){
+            $bankName = [
+                'bKash'=>'bKash',
+                'Rocket'=>'Rocket',
+                'Nagad'=>'Nagad',
+                'Bank '=>'Bank',
+              ];
+          }elseif($type=='OnlineWithdrawals'){
+              $bankName = [
+                'Perfect money'=>'Perfect money',
+                'PayPal'=>'PayPal',
+                'btc'=>'btc',
+              ];
+        }else{
+            return redirect()->back();
+        }
+
+        if($type2=='withdrawWallet'){
+            $wallet = 'withdrawWallet';
+        }elseif($type2=='dailyWallet'){
+            $wallet = 'dailyWallet';
+        }else{
+            return redirect()->back();
+        }
+
+        
+        $title = 'Withdraw Balance';
+        return view('wallet.withdrawFrom',compact('title','wallet','bankName'));
+    }
     public function withdrawWallet()
     {
         $transaction = $this->listBalance(Auth::user()->id,'withdrawWallet');
         $balance = $this->widBalance(Auth::user()->id);
         $wallet = 'withdrawWallet';
-        $walletName = 'Withdraw Wallet';
+        $walletName = 'Withdraw Repoer';
         return view('wallet.withdrawWallet',compact('transaction','balance','walletName','wallet'));
     }
 
