@@ -36,7 +36,7 @@ class HomeController extends Controller
         $slotAmt = $this->slot();
         $user_id= Auth::user()->id;
        $wallets=$this->allBalance($user_id);
-       $wallets['withdrawTotal'] = ['balance'=>$this->widBalance($user_id),'title'=>'Total Withdraw','bg'=>'1'];
+       $wallets['withdrawTotal'] = ['balance'=>$this->widBalance($user_id),'title'=>'Income wallet','bg'=>'1'];
        //$wallets['sponsorTotal'] = ['balance'=>$this->totalBalance($user_id,'sponsorWallet'),'title'=>'Total Sponsor Income','bg'=>'2'];
        $wallets['dailyWallet'] = ['balance'=>$this->totalBalance($user_id,'dailyWallet'),'title'=>'Total Profit','bg'=>'3'];
        //$wallets['registeredTotal'] = ['balance'=>Auth::user()->sponsorChilds->count(),'title'=>'Total Registered','bg'=>'4'];
