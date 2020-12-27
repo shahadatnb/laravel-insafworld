@@ -40,8 +40,6 @@
         </div>
         <!-- /.box-body -->        
       </div>
-      <!-- /.box -->
-      @include('wallet.withdrawFrom')
     <!-- /.content -->
   </div>
  @endsection
