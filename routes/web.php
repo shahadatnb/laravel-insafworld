@@ -42,6 +42,9 @@ Route::group(['middleware' => ['auth']], function(){
 	Route::get('/withdrawals/{type}/{type2}', 'HomeController@withdrawals');	
 	Route::get('/withdrawWallet', 'HomeController@withdrawWallet')->name('withdrawWallet');
 	
+	Route::get('/volume/{no}', 'HomeController@volume');
+	Route::get('/volume/id/{id}', 'HomeController@volumeID')->name('volume');
+
 	Route::get('/memberList', 'HomeController@memberList')->name('memberList');
 	Route::get('/member/id/{id}', 'HomeController@memberListId')->name('memberListId');
 	Route::get('/levelTree', 'HomeController@levelTree')->name('levelTree');

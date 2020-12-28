@@ -40,7 +40,7 @@ class User extends Authenticatable
 
 
     public function childs() {
-        return $this->hasMany('App\User','placementId','id');//->orderBy('hand');
+        return $this->hasMany('App\User','placementId','id')->orderBy('hand');
     }
 
     public function sponsorChilds() {

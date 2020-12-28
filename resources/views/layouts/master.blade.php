@@ -199,8 +199,8 @@
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>Sales Volume</a>
 						<ul class="sub-menu children dropdown-menu bg-transparent">
-							<li><i class="menu-icon fa fa-arrow-right"></i><a href="#">Volume1</a></li>
-							<li><i class="menu-icon fa fa-arrow-right"></i><a href="#">Volume2</a></li>							
+							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{url('/volume',1)}}">Volume1</a></li>
+							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{url('/volume',2)}}">Volume2</a></li>							
 						</ul>
 					</li>
 					<li class="menu-item-has-children dropdown">
@@ -211,7 +211,7 @@
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/vipMembers')}}">My Global</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/myWallet/globalIncome')}}"> Global Income</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/myWallet/rankWallet')}}"> Rank Incentive</a></li>
-							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/rankList')}}"> Rank Gallery</a></li>
+							{{-- <li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/rankList')}}"> Rank Gallery</a></li> --}}
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/myWallet/referralWallet')}}">Referral Income Report</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/myWallet/dailyWallet')}}">Daily Income Report</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="#"> Salary</a></li>

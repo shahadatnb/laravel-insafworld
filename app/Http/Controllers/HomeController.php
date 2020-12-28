@@ -84,10 +84,10 @@ class HomeController extends Controller
     }
 
     public function vipMembers(){
-        if(Auth::user()->packeg_id != 3){
-            return redirect()->route('home');
-        }
-        $members = User::where('packeg_id',3)->where('id','>',Auth::user()->id)->get();
+        // if(Auth::user()->packeg_id != 3){
+        //     return redirect()->route('home');
+        // }
+        $members = User::where('packeg_id',3)->get();//->where('id','>',Auth::user()->id)
         return view('pages.vipMembers',compact('members'));
     }
 
@@ -251,6 +251,26 @@ class HomeController extends Controller
         }
 */
         return ['lvTotal'=>$cLeft,'rvTotal'=>$cRight];
+    }
+
+
+    public function volume($no){
+        if($no==1 || $no==2){
+            $user = User::where('placementId',Auth::user()->id)->where('hand',$no)->first();
+            if ($user) {
+                return redirect()->route('volume',$user->id);
+            }            
+        }
+
+        return redirect()->back();
+    }
+
+    public function volumeID($id){
+        $member = User::find($id);
+        if ($member) {
+            return view('pages.volume',compact('member'));
+        }
+        return redirect()->back();
     }
 
 
