@@ -31,12 +31,6 @@
           </table>
         </div>
         <!-- /.box-body -->
-         <div class="card-footer">
-           @if($walletInfo['trns']==1)
-            @include('wallet.sendMoneyAc')
-           @endif
-        </div>
-        <!-- /.box-footer-->
       </div>
       <!-- /.box -->
 

@@ -1,5 +1,16 @@
+@extends('layouts.master')
+@section('title','Send Money Another Account')
+@section('content')
+<div class="content-wrapper">
+    <!-- Main content -->
+  <!-- Default box -->
+  <div class="card">
+    <div class="card-header bg-yellow with-border">
+      <strong class="card-title">Send Money Another Account</strong>
+    </div>
+  <div class="card-body">
  @include('layouts._message')
-  <h3 class="title">Send Money Another Account</h3>
+  
   {!! Form::open(['route'=>'sendMoneyAc','method'=>'POST','class'=>'form-horizontal']) !!}
   <div class="row form-group">
     <div class="col-md-2">
@@ -28,3 +39,11 @@
     </div>
   </div>
  {!! Form::close() !!}
+</div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+
+    <!-- /.content -->
+  </div>
+ @endsection

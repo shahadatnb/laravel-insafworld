@@ -192,48 +192,44 @@
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>Send Money</a>
 						<ul class="sub-menu children dropdown-menu bg-transparent">
-							<li><i class="menu-icon fa fa-user"></i><a href="{{ url('/myWallet/registerWallet')}}">Send Balance </a></li>
+							<li><i class="menu-icon fa fa-user"></i><a href="{{ url('/sendMoneyAc')}}">Send Balance </a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/myWallet/registerWallet')}}">Sending Report</a></li>
 						</ul>
 					</li>
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>Sales Volume</a>
 						<ul class="sub-menu children dropdown-menu bg-transparent">
-							<li><i class="menu-icon fa fa-arrow-right"></i><a href="#">Volume1 </a></li>
+							<li><i class="menu-icon fa fa-arrow-right"></i><a href="#">Volume1</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="#">Volume2</a></li>							
 						</ul>
 					</li>
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Others</a>
 						<ul class="sub-menu children dropdown-menu bg-transparent">
-							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/levelTree')}}">My Generation</a></li>
+							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/level')}}">My Generation</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/myWallet/generationWallet')}}">Generation Bonus</a></li>
-						</ul>
-					</li>
-					<li class="menu-item-has-children dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Bonus</a>
-						<ul class="sub-menu children dropdown-menu bg-transparent">							
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/vipMembers')}}">My Global</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/myWallet/globalIncome')}}"> Global Income</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/myWallet/rankWallet')}}"> Rank Incentive</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/rankList')}}"> Rank Gallery</a></li>
+							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/myWallet/referralWallet')}}">Referral Income Report</a></li>
+							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/myWallet/dailyWallet')}}">Daily Income Report</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="#"> Salary</a></li>
-							{{-- <li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/vipInfoList')}}"> Global Info</a></li> --}}
 						</ul>
 					</li>
+					{{-- <li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Bonus</a>
+						<ul class="sub-menu children dropdown-menu bg-transparent">							
+							
+							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/vipInfoList')}}"> Global Info</a></li>
+						</ul>
+					</li> --}}
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Cashout</a>
 						<ul class="sub-menu children dropdown-menu bg-transparent">
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/withdrawals/AgentWithdrawals/withdrawWallet')}}">Agent Withdrawals</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/withdrawals/OnlineWithdrawals/withdrawWallet')}}">Online Withdrawals</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/withdrawWallet')}}">Cashout Report</a></li>
-
-
-							{{-- <li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/myWallet/referralWallet')}}">Referral Income Report</a></li>
-							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/myWallet/dailyWallet')}}">Daily Income Report</a></li> --}}
-							
-							
-							
 						</ul>
 					</li>
 					

@@ -39,7 +39,7 @@ Route::group(['middleware' => ['auth']], function(){
 	//Route::get('/404', 'PageController@notFind')->name('/404');
 
 	Route::get('/myWallet/{wallet}', 'HomeController@myWallet')->name('myWallet');
-	Route::get('/withdrawals/{type}/{type2}', 'HomeController@withdrawals');
+	Route::get('/withdrawals/{type}/{type2}', 'HomeController@withdrawals');	
 	Route::get('/withdrawWallet', 'HomeController@withdrawWallet')->name('withdrawWallet');
 	
 	Route::get('/memberList', 'HomeController@memberList')->name('memberList');
@@ -50,7 +50,8 @@ Route::group(['middleware' => ['auth']], function(){
 	Route::get('/mySponsor', 'HomeController@mySponsor')->name('mySponsor');
 	Route::get('/matchingBonus', 'HomeController@matchingBonus')->name('matchingBonus');
 
-	Route::post('/sendMoneyAc', 'HomeController@sendMoneyAc')->name('sendMoneyAc');
+	Route::get('/sendMoneyAc', 'HomeController@sendMoneyAc');
+	Route::post('/sendMoneyAc', 'HomeController@sendMoneyAcPost')->name('sendMoneyAc');
 	Route::post('/withdrawBalance', 'HomeController@withdrawBalance')->name('withdrawBalance');
 	Route::post('/sendMoneyWw', 'HomeController@sendMoneyWw')->name('sendMoneyWw');
 

@@ -289,7 +289,12 @@ class HomeController extends Controller
 
 /*#################            ########################################  */
 
-    public function sendMoneyAc(Request $request)
+    public function sendMoneyAc(){
+        $wallet = 'registerWallet';
+        return view('wallet.sendMoneyAc',compact('wallet'));
+    }
+
+    public function sendMoneyAcPost(Request $request)
     {
         $this->validate($request, array(
             'username' => 'required|exists:users,username',
