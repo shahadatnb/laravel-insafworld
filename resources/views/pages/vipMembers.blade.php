@@ -1,10 +1,10 @@
 @extends('layouts.master')
-@section('title','VIP Members')
+@section('title','My Global')
 @section('content')
 <div class="content-wrapper">
   <div class="card bg-primary text-white">
     <div class="card-header">
-      <h3 class="card-title">VIP Members</h3>
+      <h3 class="card-title">My Global</h3>
     </div>
     <div class="card-body">
       <table class="table table-bordered">
@@ -13,11 +13,11 @@
           <th>Username</th>
           <th>Name</th>
         </tr>
-        <tr>
+        {{-- <tr>
           <td>0</td>
           <td>{{Auth::user()->username}}</td>
           <td>{{Auth::user()->name}}</td>
-        </tr>
+        </tr> --}}
         @foreach($members as $key=>$item)
         <tr>
           <td>{{++$key}}</td>
