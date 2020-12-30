@@ -87,7 +87,7 @@ class HomeController extends Controller
         // if(Auth::user()->packeg_id != 3){
         //     return redirect()->route('home');
         // }
-        $members = User::where('packeg_id',3)->get();//->where('id','>',Auth::user()->id)
+        $members = User::where('packeg_id',3)->orderBy('id)->get();//->where('id','>',Auth::user()->id)
         return view('pages.vipMembers',compact('members'));
     }
 
