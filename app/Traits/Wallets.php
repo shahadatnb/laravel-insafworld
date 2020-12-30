@@ -162,7 +162,8 @@ trait Wallets
           }
           $amt = $bonus*$amt;
           $this->generationBonusSave($user->id,$amt,$bonus_couse,$user->username);
-          $user = User::find($user->placementId);
+          //$user = User::find($user->placementId);
+          $user = User::find($user->referralId);
         }        
     }
 
