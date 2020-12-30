@@ -458,9 +458,11 @@ class HomeController extends Controller
         }        
 
         
-        $payble = $request->payment - ($request->payment/100)*10;
-        $vat = $request->payment - $payble;
-        $remark = $request->bankName.': '.$request->accountNo.' Total: '.$request->payment.',10% Vat:'.$vat.' Payble: '.$payble.' '.$request->remark; 
+        $payble = $request->payment;
+        //$payble = $request->payment - ($request->payment/100)*10;
+        //$vat = $request->payment - $payble;
+        //$remark = $request->bankName.': '.$request->accountNo.' Total: '.$request->payment.',10% Vat:'.$vat.' Payble: '.$payble.' '.$request->remark; 
+        $remark = $request->bankName.': '.$request->accountNo.' '.$request->remark; 
         $data2 = new AdminWallet;
         $data2->user_id = Auth::user()->id;
         $data2->payment = $payble;//round($payble);
