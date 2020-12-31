@@ -418,7 +418,7 @@ class HomeController extends Controller
             $data->wType = 'withdrawWallet';
             $data->save();
 
-            Session::flash('success','Transfared to Withdraw');
+            Session::flash('success','Transfered to Withdraw');
         }
         return redirect()->back();
     }
