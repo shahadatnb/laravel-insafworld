@@ -76,7 +76,7 @@ class HomeController extends Controller
                 $data2 = new Wallet;
                 $data2->user_id = Auth::user()->id;
                 $data2->receipt = $vip[$userVIP]['amount'];
-                $data2->wType = 'vipIncentive';
+                $data2->wType = 'globalIncome';
                 $data2->remark = 'VIP Incentive #'.$userVIP;
                 $data2->save();
             }
