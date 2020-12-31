@@ -227,8 +227,8 @@
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Cashout</a>
 						<ul class="sub-menu children dropdown-menu bg-transparent">
-							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/withdrawals/AgentWithdrawals/withdrawWallet')}}">Agent Withdrawals</a></li>
-							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/withdrawals/OnlineWithdrawals/withdrawWallet')}}">Online Withdrawals</a></li>
+							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/withdrawals/AgentWithdrawals/withdrawWallet')}}">Agent Withdraw</a></li>
+							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/withdrawals/OnlineWithdrawals/withdrawWallet')}}">Online Withdraw</a></li>
 							<li><i class="menu-icon fa fa-arrow-right"></i><a href="{{ url('/withdrawWallet')}}">Cashout Report</a></li>
 						</ul>
 					</li>
