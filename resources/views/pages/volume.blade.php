@@ -27,7 +27,7 @@ Name: {{$member->name}} <br>
                     
 
               Name: {{$m->name}} <br>
-              Usernme: {{$m->username}} <br>
+              Username: {{$m->username}} <br>
               Email: {{$m->email}} <br>
               Packeg: {{$m->packeg->title}} <br>
               <a class="btn btn-primary" href="{{route('volume',$m->id)}}">Details</a>
