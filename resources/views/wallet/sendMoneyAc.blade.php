@@ -35,7 +35,7 @@
       {{ Form::text('remark',null,['class'=>'form-control']) }}
     </div>
     <div class="col-md-6">
-      {{ Form::submit('Transtfar',array('class'=>'btn btn-yellow')) }}
+      {{ Form::submit('Transtfer',array('class'=>'btn btn-yellow')) }}
     </div>
   </div>
  {!! Form::close() !!}

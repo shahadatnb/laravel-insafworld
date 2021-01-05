@@ -76,7 +76,7 @@ class HomeController extends Controller
                 $data2 = new Wallet;
                 $data2->user_id = Auth::user()->id;
                 $data2->receipt = $vip[$userVIP]['amount'];
-                $data2->wType = 'vipIncentive';
+                $data2->wType = 'globalIncome';
                 $data2->remark = 'VIP Incentive #'.$userVIP;
                 $data2->save();
             }
@@ -418,7 +418,7 @@ class HomeController extends Controller
             $data->wType = 'withdrawWallet';
             $data->save();
 
-            Session::flash('success','Transfared to Withdraw');
+            Session::flash('success','Transfered to Withdraw');
         }
         return redirect()->back();
     }
