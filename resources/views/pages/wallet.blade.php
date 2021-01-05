@@ -9,7 +9,7 @@
       <div class="card">
         <div class="card-header bg-yellow with-border">
           <strong class="card-title">Your {{$walletInfo['title']}}</strong>
-          @if(array_has($walletInfo,'dailyWallet')), Balance ${{ $balance }} @endif
+          @if(array_has($walletInfo,'dailyWallet')), Balance ${{ $balance }} <a href="{{url('/dailyToWW')}}" class="btn btn-success">Transfer to Withdraw</a> @endif
         </div>
         <div class="card-body">
           <p>Transaction List</p>

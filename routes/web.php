@@ -19,7 +19,8 @@ Route::get('/ac_config', function()
         return 'OK';
     });
 
-Route::get('/', 'FrontController@index')->name('/');
+//Route::get('/', 'FrontController@index')->name('/');
+
 
 Auth::routes();
 
@@ -29,6 +30,7 @@ Route::group(['middleware' => 'auth'], function(){
 	});
 
 Route::group(['middleware' => ['auth']], function(){
+	Route::get('/', 'HomeController@index')->name('/');
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('/vipMembers', 'HomeController@vipMembers')->name('vipMembers');
 	Route::get('/vipInfoList', 'HomeController@vipList')->name('vipInfoList');
@@ -41,6 +43,7 @@ Route::group(['middleware' => ['auth']], function(){
 	Route::get('/myWallet/{wallet}', 'HomeController@myWallet')->name('myWallet');
 	Route::get('/withdrawals/{type}/{type2}', 'HomeController@withdrawals');	
 	Route::get('/withdrawWallet', 'HomeController@withdrawWallet')->name('withdrawWallet');
+	Route::get('/dailyToWW', 'HomeController@dailyToWW')->name('dailyToWW');
 	
 	Route::get('/volume/{no}', 'HomeController@volume');
 	Route::get('/volume/id/{id}', 'HomeController@volumeID')->name('volume');

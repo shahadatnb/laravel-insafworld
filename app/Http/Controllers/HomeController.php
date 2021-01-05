@@ -423,6 +423,38 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
+
+    public function dailyToWW(){
+        $amount = $this->totalBalance(Auth::user()->id,'dailyWallet');
+
+        if($amount < Auth::user()->packeg->minWithdraw){
+                Session::flash('warning','Sorry, Minimum Withdraw amount '.Auth::user()->packeg->minWithdraw);
+                return redirect()->back();
+            }            
+
+            $data2 = new Wallet;
+            $data2->user_id = Auth::user()->id;
+            //$data2->payment = round($payble);
+            $data2->payment = $amount;
+            $data2->remark = 'Transfared to Withdraw';
+            $data2->wType = 'dailyWallet';
+            //$data2->admin_id = 1;//$request->paymentId;
+            $data2->save();
+
+            
+            $data = new Wallet;
+            $data->user_id = Auth::user()->id;
+            $data->receipt = $amount;
+            $data->remark = 'Transfared form dailyWallet';
+            $data->wType = 'withdrawWallet';
+            $data->save();
+
+            Session::flash('success','Transfared to Withdraw');
+        
+        return redirect()->back();
+
+    }
+
     public function withdrawBalance(Request $request)
     {
         $this->validate($request, array(
