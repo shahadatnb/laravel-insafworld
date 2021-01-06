@@ -12,6 +12,7 @@
           @if(array_has($walletInfo,'dailyWallet')), Balance ${{ $balance }} <a href="{{url('/dailyToWW')}}" class="btn btn-success">Transfer to Withdraw</a> @endif
         </div>
         <div class="card-body">
+          @include('layouts._message')
           <p>Transaction List</p>
           <table class="table table-striped">
             <tr>

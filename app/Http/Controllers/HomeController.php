@@ -425,7 +425,25 @@ class HomeController extends Controller
 
 
     public function dailyToWW(){
-        $amount = $this->totalBalance(Auth::user()->id,'dailyWallet');
+        $amount = $this->balance(Auth::user()->id,'dailyWallet');
+
+        $lastTx=Wallet::where('user_id',Auth::user()->id)->where('wType','dailyWallet')->whereNotNull('payment')->latest()->first();
+
+        if($lastTx){
+            $last_tx_date= $lastTx->created_at;                
+        }else{
+            $last_tx_date= Auth::user()->created_at;
+        }
+
+        $waiting_day = 30;
+
+        $today = Carbon::today()->subDay($waiting_day);
+
+        if($last_tx_date > $today){
+            //dd('Not Mature, wait '.$wallet_info.' dsys after last transfer.'); exit;
+            Session::flash('warning','Not Mature, wait '.$waiting_day.' dsys after last transfer.');
+            return redirect()->back();
+        }
 
         if($amount < Auth::user()->packeg->minWithdraw){
                 Session::flash('warning','Sorry, Minimum Withdraw amount '.Auth::user()->packeg->minWithdraw);
