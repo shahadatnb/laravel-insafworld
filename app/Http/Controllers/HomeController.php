@@ -16,7 +16,7 @@ use DB;
 class HomeController extends Controller
 {
     use Wallets;
-    private $withdrowAmt = 3;
+    private $withdrowAmt = 30;
     private $transferToWW = 0;
     private $mBonus = 10;
     private $dayLimit = 200;
@@ -38,7 +38,7 @@ class HomeController extends Controller
        $wallets=$this->allBalance($user_id);
        $wallets['withdrawTotal'] = ['balance'=>$this->widBalance($user_id),'title'=>'Income wallet','bg'=>'1'];
        //$wallets['sponsorTotal'] = ['balance'=>$this->totalBalance($user_id,'sponsorWallet'),'title'=>'Total Sponsor Income','bg'=>'2'];
-       $wallets['dailyWallet'] = ['balance'=>$this->totalBalance($user_id,'dailyWallet'),'title'=>'Total Profit','bg'=>'3'];
+       $wallets['dailyWallet'] = ['balance'=>$this->totalBalance($user_id,'dailyWallet'),'title'=>'Total Profit','bg'=>'2'];
        //$wallets['registeredTotal'] = ['balance'=>Auth::user()->sponsorChilds->count(),'title'=>'Total Registered','bg'=>'4'];
        //$wallets['wrTotal'] = ['balance'=>$this->withdrawalRequest($user_id),'title'=>'Withdrawal Request Total','bg'=>'5'];
        //$wallets['wsTotal'] = ['balance'=>$this->withdrawalRequestSuccess($user_id),'title'=>'Withdrawal Success Total','bg'=>'6'];
@@ -48,7 +48,7 @@ class HomeController extends Controller
        $wallets['rvTotal'] = ['balance'=>$slotAmt['rvTotal'],'title'=>'Volume 2','bg'=>'4'];
 
        $wallets2 = array();
-       $percent=['balance'=>$this->ckDailyIncomePercent(Auth::user()),'title'=>'Profit','bg'=>'5'];
+       $percent=['balance'=>$this->ckDailyIncomePercent(Auth::user()),'title'=>'Profit','bg'=>'1'];
        //$wallets2['rankName'] = ['balance'=>'Rank','title'=>$this->rank[Auth::user()->rank]['title'],'bg'=>'6'];
        //$wallets2['myPackeg'] = ['balance'=>Auth::user()->packeg->title,'title'=>'My Packeg','bg'=>'1'];
        if(Auth::user()->packeg_id == 8){

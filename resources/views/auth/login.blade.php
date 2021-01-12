@@ -84,6 +84,17 @@
                         </div>
                     </form>
                 </div>
+                @php $products = App\Product::where('status',1)->latest()->paginate(20); @endphp
+                @foreach($products as $product)
+                <div class="card">
+                    <img src="{{url('public/upload/product')}}/{{ $product->photo }}" alt="" class="card-img-top">
+                    <div class="card-body">
+                <p><span>{{ prettyDate($product->created_at) }}</span></p>
+                        <h4 class="card-title mb-3">{{ $product->title }}</h4>
+                        <p class="card-text">{!! $product->description !!}</p>
+                    </div>
+                </div>
+                @endforeach 
             </div>
         </div>
     </div>

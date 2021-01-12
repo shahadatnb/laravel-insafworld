@@ -22,6 +22,8 @@
               <th>Member Name</th>
               <th>Email</th>
               <th>Mobile</th>
+              <th>Package</th>
+              <th>Rank</th>
               <th>R. ID</th>
               <th>P. ID</th>
               <th>J. Date</th>
@@ -41,6 +43,8 @@
               <td>{{ $member->name }}</td>
               <td>{{ $member->email }}</td>
               <td>{{ $member->mobile }}</td>
+              <td>{{ $member->packeg->title }}</td>
+              <td>{{ $member->rank }}</td>
               <td>{{ $member->referralId }}</td>
               <td>{{ $member->placementId }}</td>
               <td>{{ $member->created_at->format('d M Y') }}</td>
