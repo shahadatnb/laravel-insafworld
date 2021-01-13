@@ -26,6 +26,7 @@
               <th>Payment</th>
               <th>Max %</th>
               <th>Min Withdraw</th>
+              <th>Waiting Day</th>
               <th>Action</th>
             </tr>
             @foreach ($products as $product)
@@ -36,6 +37,7 @@
               <td>{{ $product->payment }}</td>             
               <td>{{ $product->exp }}</td>
               <td>{{ $product->minWithdraw }}</td>
+              <td>{{ $product->waiting_day }}</td>
               <td>                
                 <a class="btn btn-success btn-xs" href="{{ route('packs.edit',$product->id) }}"><i class="fa fa-edit"></i>  Edit</a>
               </td>

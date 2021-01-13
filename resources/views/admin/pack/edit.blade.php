@@ -47,7 +47,15 @@
               {{ Form::label('minWithdraw','Min Withdraw') }}
             </div>
             <div class="col-md-8">
-              {{ Form::text('minWithdraw',null,['class'=>'form-control']) }}             
+              {{ Form::number('minWithdraw',null,['class'=>'form-control']) }}             
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              {{ Form::label('waiting_day','Min Withdraw') }}
+            </div>
+            <div class="col-md-8">
+              {{ Form::number('waiting_day',null,['class'=>'form-control']) }}             
             </div>
           </div>
           <div class="row">

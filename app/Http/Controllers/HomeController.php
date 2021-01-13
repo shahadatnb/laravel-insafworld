@@ -154,6 +154,7 @@ class HomeController extends Controller
               $bankName = [
                 'Perfect money'=>'Perfect money',
                 'PayPal'=>'PayPal',
+                'Payeer'=>'Payeer',
                 'btc'=>'btc',
               ];
         }else{
@@ -435,7 +436,7 @@ class HomeController extends Controller
             $last_tx_date= Auth::user()->created_at;
         }
 
-        $waiting_day = 30;
+        $waiting_day = Auth::user()->packeg->waiting_day;
 
         $today = Carbon::today()->subDay($waiting_day);
 

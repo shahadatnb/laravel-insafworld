@@ -38,6 +38,7 @@ class PacController extends Controller
             'payment'=>'required',
             'exp'=>'required',
             'minWithdraw'=>'required',
+            'waiting_day'=>'required',
             ));
 
         $data = Packeg::find($id);
@@ -46,7 +47,9 @@ class PacController extends Controller
         $data->payment = $request->payment;
         $data->exp = $request->exp;
         $data->minWithdraw = $request->minWithdraw;
+        $data->waiting_day = $request->waiting_day;
         $data->save();
+        Session::flash('success','Saved');
         return redirect()->back();
     }
 
