@@ -27,7 +27,8 @@ class ProfileController extends Controller
         $user = User::find($id);
         if($user){
             $wallets=$this->allBalance($user->id);
-            return view('profile.profileView',compact('user','wallets'));
+            $rank = $this->rank[$user->rank]['title'];
+            return view('profile.profileView',compact('user','wallets','rank'));
         }
         return redirect()->back();
     }

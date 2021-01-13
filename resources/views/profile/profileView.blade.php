@@ -20,7 +20,7 @@
               @endif
 
               <h3 class="profile-username text-center">{{ $user->name }}</h3>
-              <h6 class="profile-username text-center">ID: {{ $user->id }}</h6>
+              <h6 class="profile-username text-center">Username: {{ $user->username }}</h6>
 
               <p class="text-muted text-center"></p>
             </div>
@@ -28,13 +28,12 @@
         </div>
         <!-- /.col -->
         <div class="col-md-9">
-          <h3>Password Chenge</h3>
             {!! Form::open(['url' => 'changePassAdmin','class'=>'form-horizontal']) !!}              
             <input type="hidden" name="user_id" value="{{ $user->id }}">
             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                <label for="password" class="control-label">Password</label>
-
+              <div class="row">
                 <div class="col-md-6">
+                <label for="password" class="control-label">Password</label>
                     <input id="password" type="text" class="form-control" name="password" required>
 
                     @if ($errors->has('password'))
@@ -44,11 +43,13 @@
                     @endif
                 </div>
                 <div class="col-md-6 col-md-offset-3">
+                    <h3>Password Chenge</h3>
                     <button type="submit" class="btn btn-primary">
                         Change Password
                     </button>
                 </div>
             </div>
+          </div>
           {!! Form::close() !!}
           <table class="table">
             <tr>
@@ -70,6 +71,16 @@
               <td></td>
               <td>Mobile</td>
               <td>{{ $user->mobile }}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Package</td>
+              <td>{{ $user->packeg->title }}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Rank</td>
+              <td>{{ $rank }}</td>
             </tr>
             @foreach($wallets as $item)
             <tr>
