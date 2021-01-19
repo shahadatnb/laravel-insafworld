@@ -16,7 +16,7 @@ use DB;
 class HomeController extends Controller
 {
     use Wallets;
-    private $withdrowAmt = 30;
+    private $withdrowAmt = 3;
     private $transferToWW = 0;
     private $mBonus = 10;
     private $dayLimit = 200;
@@ -483,31 +483,35 @@ class HomeController extends Controller
             'payment' => 'required|numeric|min:'.$this->withdrowAmt,
             )
         );
-
+/*
         if($request->wType == 'dailyWallet'){
             if($request->payment < Auth::user()->packeg->minWithdraw){
                 Session::flash('warning','Sorry, Minimum Withdraw amount '.Auth::user()->packeg->minWithdraw);
                 return redirect()->back();
             }            
         }else{
+            
+        }
+*/
             if($request->payment < $this->withdrowAmt ){
                 Session::flash('warning','Sorry, Minimum Withdraw amount '.$this->withdrowAmt.'.');
                 return redirect()->back();
             }
-        }
 
+/*
         if($request->wType == 'dailyWallet'){
             if($this->balance(Auth::user()->id,'dailyWallet') < $request->payment ){
                 Session::flash('warning','Sorry, Your Balance Less then $'.$request->payment);
                 return redirect()->back();
             }
         }else{
-            if($this->widBalance(Auth::user()->id) < $request->payment ){
+            
+        }        
+*/
+        if($this->widBalance(Auth::user()->id) < $request->payment ){
                 Session::flash('warning','Sorry, Your Balance Less then $'.$request->payment);
                 return redirect()->back();
             }
-        }        
-
         
         $payble = $request->payment;
         //$payble = $request->payment - ($request->payment/100)*10;
