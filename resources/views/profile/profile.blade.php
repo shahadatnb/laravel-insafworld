@@ -15,7 +15,7 @@
             </ul>
             <div class="tab-content">
               <div class="active tab-pane" id="activity">
-                <a href="{{ url('editProfile') }}" class="btn btn-default btn-sm">Edit Profile</a>
+                {{-- <a href="{{ url('editProfile') }}" class="btn btn-default btn-sm">Edit Profile</a> --}}
                 <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">Update profile photo</button>
                 <a href="{{ url('changePass') }}" class="btn btn-default btn-sm">Change Password</a>
                 <table class="table table-bordered table-striped">
@@ -38,6 +38,16 @@
                     <td></td>
                     <td>Mobile</td>
                     <td>{{ Auth::user()->mobile }}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Package</td>
+                    <td>{{ Auth::user()->packeg->title }}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Rank</td>
+                    <td>{{ $rank }}</td>
                   </tr>
                   <tr>
                     <td></td>

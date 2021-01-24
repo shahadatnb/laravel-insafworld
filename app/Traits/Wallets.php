@@ -97,6 +97,14 @@ trait Wallets
         return $balances;
     }
 
+    public function allBalanceAdmin($id){
+        $balances = [];
+            foreach ($this->wallets as $key=>$value) {
+                $balances[$key] = ['balance'=>$this->balance($id,$key),'title'=>$value['title'],'bg'=>$value['bg']];
+            }
+        return $balances;
+    }
+
     public function acValidate($id)
     {
       $user = User::find($id);

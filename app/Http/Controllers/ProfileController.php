@@ -20,13 +20,14 @@ class ProfileController extends Controller
     private $userCom = 3;
 
     public function index(){
-        return view('profile.profile');
+        $rank = $this->rank[Auth::user()->rank]['title'];
+        return view('profile.profile',compact('rank'));
     }
 
     public function profileView($id){
         $user = User::find($id);
         if($user){
-            $wallets=$this->allBalance($user->id);
+            $wallets=$this->allBalanceAdmin($user->id);
             $rank = $this->rank[$user->rank]['title'];
             return view('profile.profileView',compact('user','wallets','rank'));
         }
